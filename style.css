@@ -1,0 +1,202 @@
+/* grid-area: <row-start> / <column-start> / <row-end> / <column-end>; */
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+body {
+  background-color: lavender;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Game Container CSS */
+.game-container {
+  /* margin: 30px 0 0 0; */
+  width: 90vw;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 5fr 1fr repeat(3, 6fr) 1fr 5fr;
+  grid-template-rows: 5fr 1fr 2fr repeat(19, 1fr) 2fr;
+}
+/* Game Container CSS */
+
+/* General Elements CSS */
+header {
+  background-color: slategrey;
+  border-radius: 10px;
+  border: 2px solid white;
+  grid-row: 1 / span 1;
+  grid-column: 3 / span 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Nunito", sans-serif;
+  font-size: 5vw;
+  letter-spacing: 3px;
+  text-decoration: underline;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: slategrey;
+  border-radius: 10px;
+  border: 2px solid white;
+  grid-row: 3 / span 1;
+  grid-column: 3 / span 3;
+}
+
+nav a {
+  text-decoration: none;
+  font-family: "Nunito", sans-serif;
+  font-size: 2.5vh;
+  letter-spacing: 3px;
+}
+
+.game-buttons {
+  background-color: slategrey;
+  border-radius: 10px;
+  border: 2px solid white;
+  grid-row: 5 / span 16;
+  grid-column: 1 / span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.interact-button {
+  background-color: darkslategrey;
+  color: white;
+  width: 80%;
+  border: 1px solid black;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.disk-slider {
+  margin-top: 20px;
+  width: 90%;
+  height: 25px;
+  background-color: grey;
+  color: green;
+  cursor: pointer;
+}
+
+.instructions {
+  background-color: slategrey;
+  border-radius: 10px;
+  border: 2px solid white;
+  grid-row: 5 / span 16;
+  grid-column: 7 / span 1;
+  padding: 0 5px;
+}
+
+.game-win {
+  grid-area: 5 / 3 / span 3 / span 3;
+  background-color: slategrey;
+  border-radius: 10px;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 19;
+}
+
+.game-block {
+  /* used to preent further input after game is completed */
+  grid-area: 5 / 3 / span 17 / span 3;
+  background-color: rgba(0, 0, 0, 0);
+  display: none;
+  z-index: 20;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: cornflowerblue;
+  border-radius: 10px;
+  border: 2px solid white;
+  grid-row: 23 / span 1;
+  grid-column: 3 / span 3;
+}
+
+h3 {
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+}
+
+.instruction-text {
+  /* text-align: justify; */
+  font-size: vw;
+}
+
+.base h3 {
+  font-size: 1.2vh;
+  line-height: 5px;
+}
+/* General Elements CSS */
+
+/* Base CSS */
+.base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 95%;
+  background-color: sandybrown;
+  border: 1px solid black;
+  border-radius: 25px 25px 0 0;
+  justify-self: center;
+  align-self: center;
+  /* max-height: 25px; */
+}
+
+#baseOne {
+  grid-row: 21 / span 1;
+  grid-column: 3 / span 1;
+}
+#baseTwo {
+  grid-row: 21 / span 1;
+  grid-column: 4 / span 1;
+}
+
+#baseThree {
+  grid-row: 21 / span 1;
+  grid-column: 5 / span 1;
+}
+/* Base CSS */
+
+/* Tower CSS */
+.tower {
+  height: 100px;
+  width: 10px;
+  justify-self: center;
+  align-self: end;
+  background-color: sandybrown;
+  border: 1px solid black;
+  /* mesh bottom of tower into base */
+  border-bottom: 0;
+  margin-bottom: -1px;
+  z-index: 3;
+  border-radius: 25px 25px 0 0;
+}
+
+#towerOne {
+  grid-row: 5 / span 16;
+  grid-column: 3 / span 1;
+}
+
+#towerTwo {
+  grid-row: 5 / span 16;
+  grid-column: 4 / span 1;
+}
+
+#towerThree {
+  grid-row: 5 / span 16;
+  grid-column: 5 / span 1;
+}
+/* Tower CSS */
