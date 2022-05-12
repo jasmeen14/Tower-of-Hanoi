@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<title>Tower of Hanoi</title>
+	</head>
+
+	<body>
+		<div class="game-container">
+			<header>
+				<h1>Tower of Hanoi</h1>
+			</header>
+			<nav>
+				<a href="http://zbauer91.github.io">Home Page</a>
+			</nav>
+			<aside class="game-buttons">
+				<a class="interact-button" onclick="solveRecursively(gameVars.numDisks, 'tower-3', 'tower-4', 'tower-5')">
+					<h3>Solve Game</h3>
+				</a>
+				<a class="interact-button" onclick="resetGame()">
+					<h3>Reset Game</h3>
+				</a>
+				<div id="slidecontainer">
+					<input type="range" min="3" max="15" value="5" id="discRange" class="disc-slider" onchange="changeDisks(this.value)">
+				</div>
+				<h3 id="diskCounter">5 Disks</h3>
+				<div>
+					<h3 id="moveCounter">Moves: 0</h3>
+				</div>
+				<div>
+					<h3 id="minimumMoves">Minimum Moves: </h3>
+				</div>
+			</aside>
+
+			<!-- bases -->
+			<div class="base" id="baseOne">
+				<h3>Tower One</h3>
+			</div>
+			<div class="base" id="baseTwo">
+				<h3>Tower Two</h3>
+			</div>
+			<div class="base" id="baseThree">
+				<h3>Tower Three</h3>
+			</div>
+
+			<!-- Towers -->
+			<div class="tower" id="towerOne">
+			</div>
+			<div class="tower" id="towerTwo">
+			</div>
+			<div class="tower" id="towerThree">
+			</div>
+			<aside class="instructions">
+				<p class="instruction-text">The goal of the puzzle is to move all the disks from the leftmost peg to the rightmost peg, adhering to the following
+					rules:
+					<br/>
+					<br/>Move only one disk at a time
+					<br/>
+					<br/>A larger disk may not be placed on top of a smaller disk
+				</p>
+			</aside>
+			<footer>
+				<h3>&copy;2017 Zach Bauer @ GA</h3>
+			</footer>
+		</div>
+		<script src="main.js"></script>
+	</body>
+
+
+</html>
